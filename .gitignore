@@ -1,0 +1,4 @@
+*.pyc
+notes.py
+settings.py
+/ENV

@@ -1,0 +1,68 @@
+{#
+<!--
+	-Within the index.html you extend base b/c all items that must be loaded with automatically be applied on this child page of base.
+
+		-Within base.html is a section called "{% block content %}{% endblock %}" within a parent div called
+	 "<div id="content" class="col_12">,/div>". Here is where you can shove the index.html's "content" into the parent html page
+-->
+#}
+
+
+{% extends "base.html" %}
+
+{% block content %}
+	<div id="header" class="col_12">
+		<h1 class="center">Welcome to the ProvPlan InfoGroup!</h1>
+
+		<div id="intro">
+			<p>
+				Description of what PP does... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac ultricies lorem. Aenean id adipiscing quam. Curabitur ultricies, est nec interdum sollicitudin, libero velit vulputate nulla, vehicula rhoncus tortor nisl quis ligula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam laoreet quam lectus. Vestibulum posuere viverra nulla, ac dapibus lectus egestas bibendum. Integer sed felis et elit elementum molestie.
+			</p>
+		</div>
+	</div>
+	
+	<div id ="role_select" class="center col_12"> 
+		<p class="left"> Select your Role: </p>
+
+		<div class="col_3">
+			<a href="/programmer"><button class="role_btn"><p><i class="fa fa-code"></i> Programmer</p></button></a>
+		</div>
+
+		<div class="col_3">
+			<a href="/analyst" class="role_btn"><button class="role_btn"><p><i class="fa fa-bar-chart-o"></i> Analyst</p></button></a>			
+		</div>
+
+		<div class="col_3">
+			<a href="/communications"><button class="role_btn"><p><i class="fa fa-users"></i> Communications</p></button></a>
+		</div>
+
+		<div class="col_3">
+			<a href="/intern"><button class="role_btn"><p><i class="fa fa-pencil-square-o"></i>Intern</p></button></a>
+		</div>
+
+		<!--<hr class="alt1" />-->
+	</div>
+
+
+	<div id ="our_sites" class="center col_12"> 
+		<p class="left"> Check out the work we do: </p>
+
+		<div id="pp_logo" class="col_4">
+			<a href="http://provplan.org/index.php/">
+				<img src="static/images/ProvPlan_logo.png">
+			</a>
+		</div>
+
+		<div id="profiles_logo" class="col_4">
+			<a href="http://profiles.provplan.org/profiles/state/rhode-island/overview/">
+				<img src="static/images/Community-Profiles-Logo-DL-Trans.png"> 
+			</a>
+		</div>
+
+		<div id="hub_logo" class="col_4">
+			<a href="http://ridatahub.org/">
+				<img src="static/images/RI-DataHUB-LOGO-DL-Trans.png" > 
+			</a>
+		</div>
+	</div>
+{% endblock %}

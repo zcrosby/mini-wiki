@@ -1,0 +1,5 @@
+analyst_greeting.md  
+communications_greeting.md  
+intern_greeting.md  
+programmer_greeting.md
+

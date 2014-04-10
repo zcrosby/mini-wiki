@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="col_12">
+		<div class="col_3"></div>
+		<div id="login-header" class="col_6">
+			<h3>Bootcamp Login</h3>
+		</div>
+		<div class="col_3"></div>
+	</div>
+	<div class="col_12">
+		<div class="col_3"></div>
+		<div class="col_6" id="login">
+			<fieldset>
+				<legend><i class="icon-lock"></i></legend>
+				<form action="/login" method="POST">
+					<label>Username:</label><input id="" name="username" type="text" />
+					<label >Password:</label><input id="" name="password" type="password" />
+					<input type="hidden" name="redir_url" value="{{ redir_url }}" />
+					<input id="" class="medium" type="submit" value="Submit" />
+				</form>
+				{% if badLogin %}
+					<div class="error">*Username or password are incorrect</div>
+				{% endif %}
+			</fieldset>	
+		</div>
+		<div class="col_3"></div>
+	</div>
+{% endblock %}

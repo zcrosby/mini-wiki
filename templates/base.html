@@ -1,0 +1,43 @@
+<!-- 
+	-Base contains all the externals that will need to be loaded for each time a page is called
+	 -It will also contain perhaps the wrapper div if the wrapper is something that remains the same for each page
+	 -Headers and footer may also be within base 
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- META -->
+	<title>Info Group Bootcamp</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta name="description" content="" />
+	
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/kickstart.css')}}" media="all" />
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}" media="all" /> 
+	
+	<!-- Javascript -->
+	<script type="text/javascript" src="{{url_for('static', filename='js/jquery-2.0.3.min.js')}}"></script>
+	<script type="text/javascript" src="{{url_for('static', filename='js/kickstart.js')}}"></script>
+	<script type="text/javascript" src="{{url_for('static', filename='js/base.js')}}"></script>
+	{% block head %}
+	{% endblock %}
+</head>
+<body>
+
+<div class="grid">
+	{%if loggedIn%}
+		<div id="logout-btn"><a href="/logout">Logout</a></div>
+	{%endif%}
+
+	<!-- ===========BEGIN CONTENT============ -->
+	<div id="content" class="col_12">
+		{% block content %}
+		{% endblock %}
+	</div>
+	<!-- ===========END CONTENT============== -->
+</div> <!-- End Grid -->
+</body>
+</html>

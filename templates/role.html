@@ -1,0 +1,47 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="role-text">{{role}}</h1>
+<a href="/"><button id="home-btn"><i class="icon-home"></i></button></a>
+<!-- ===========BEGIN CONTENT============ -->
+	<div class="col_12">
+		<!--MENU-->
+		<div class="center col_3"> 
+			<ul id="menu" class="menu vertical left">
+				<!--For any item that is a subdirectory, a new sub menu will be created recusively -->
+				{% for item in role_menu_items recursive %}
+					<li><a href="/info?p={{item.path}}&i={{ item.orig }}">{{ item.cleaned }}</a>
+						{% if item.files %}
+							<ul>
+								{{ loop(item.files) }}
+							</ul>
+						{% endif %}
+					</li>
+				{% endfor %}
+
+
+				{% for item in for_all_menu_items recursive%}
+					<li><a href="/info?p={{item.path}}&i={{ item.orig }}">{{ item.cleaned }}</a>
+						{% if item.files %}
+							<ul>
+								{{ loop(item.files) }}
+							</ul>
+						{% endif %}
+					</li>
+				{% endfor %}
+					
+			</ul>
+		</div>
+
+		<!--MARKDOWN is displayed here:-->
+		<div id="info" class="center col_9">
+			<p id="role-mess"> 
+				<h4><i class="icon-arrow-left"></i> Select a tab to view your resources</h4>
+				<!--Role greeting is dsplayed here, when user initially arrives to the page-->
+				{{greeting}}
+			</p>
+		</div>
+	</div>
+<!-- ===========END CONTENT============== -->
+{% endblock %}
