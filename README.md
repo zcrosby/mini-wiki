@@ -1,5 +1,5 @@
-##InfoGroup Bootcamp  
-Web app for new hires to locate resources and helpful guides. 
+##Mini-Wiki
+A dynamic wiki-like app for displaying markdown files. 
 
 ####Requirements & Guides
 --Requires [Flask](http://flask.pocoo.org/)     
